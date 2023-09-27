@@ -8,7 +8,7 @@
 [![license](https://img.shields.io/github/license/zgabievi/promocodes.svg)](https://packagist.org/packages/zgabievi/promocodes)
 
 Coupons and promotional codes generator for [Laravel](https://laravel.com). Current release is only
-for [Laravel 9.x](https://laravel.com/docs/9.x) and [PHP 8.1](https://www.php.net/releases/8.1/en.php). It's completely
+for [Laravel 10.x](https://laravel.com/docs/9.x) and [PHP 8.1](https://www.php.net/releases/8.1/en.php). It's completely
 rewritten, and if you are using previous version, you should change your code accordingly. Code is simplified now and it
 should take you several minutes to completely rewrite usage.
 
