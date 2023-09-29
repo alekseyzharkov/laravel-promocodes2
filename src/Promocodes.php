@@ -258,6 +258,26 @@ class Promocodes
         return $this->promocode;
     }
 
+    public function withdraw()
+    {
+        if (!$this->promocode) {
+            throw new PromocodeDoesNotExistException($this->code);
+        }
+
+        $this->user->appliedPromocodes()->detach($this->promocode);
+
+        if ($this->promocode->bound_to_user && $this->promocode->user_id) {
+            $this->promocode->user()->disassociate($this->user);
+            $this->promocode->save();
+        }
+
+        if (!$this->promocode->isUnlimited()) {
+            $this->promocode->increment('usages_left');
+        }
+
+        return $this->promocode;
+    }
+
     /**
      * @return Collection
      */
