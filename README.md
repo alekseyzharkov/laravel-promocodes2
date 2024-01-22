@@ -1,11 +1,4 @@
-[![#StandWithUkraine](https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1)](https://supportukrainenow.org)
-[![laravel-promocodes](https://banners.beyondco.de/laravel-promocodes.jpeg?theme=light&packageManager=composer+require&packageName=zgabievi%2Flaravel-promocodes&pattern=topography&style=style_2&description=Coupons+and+promotional+codes+generator.&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg)](https://github.com/zgabievi/laravel-promocodes)
-
-# laravel-promocodes
-
-[![Packagist](https://img.shields.io/packagist/v/zgabievi/promocodes.svg)](https://packagist.org/packages/zgabievi/promocodes)
-[![Packagist](https://img.shields.io/packagist/dt/zgabievi/promocodes.svg)](https://packagist.org/packages/zgabievi/promocodes)
-[![license](https://img.shields.io/github/license/zgabievi/promocodes.svg)](https://packagist.org/packages/zgabievi/promocodes)
+# This is a fork of laravel-promocodes with some fixes and improvements
 
 Coupons and promotional codes generator for [Laravel](https://laravel.com). Current release is only
 for [Laravel 10.x](https://laravel.com/docs/9.x) and [PHP 8.1](https://www.php.net/releases/8.1/en.php). It's completely
