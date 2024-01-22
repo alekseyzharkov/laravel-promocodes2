@@ -258,7 +258,18 @@ class Promocodes
         return $this->promocode;
     }
 
-    public function withdraw()
+    /**
+     * Withdraws a promocode that has been applied by a user.
+     *
+     * This method is responsible for detaching the promocode from the user,
+     * disassociating the user from the promocode if it was bound to the user,
+     * and incrementing the number of usages left for the promocode if it's not unlimited.
+     *
+     * @throws PromocodeDoesNotExistException if the promocode does not exist
+     *
+     * @return PromocodeContract|null The promocode that was withdrawn
+     */
+    public function withdraw(): ?PromocodeContract
     {
         if (!$this->promocode) {
             throw new PromocodeDoesNotExistException($this->code);
@@ -267,7 +278,7 @@ class Promocodes
         $this->user->appliedPromocodes()->detach($this->promocode);
 
         if ($this->promocode->bound_to_user && $this->promocode->user_id) {
-            $this->promocode->user()->disassociate($this->user);
+            $this->promocode->user()->disassociate();
             $this->promocode->save();
         }
 

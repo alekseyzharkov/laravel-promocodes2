@@ -1,5 +1,5 @@
 {
-    "name": "zgabievi/laravel-promocodes",
+    "name": "super-pharm/laravel-promocodes2",
     "description": ":package_description",
     "license": "MIT",
     "authors": [
@@ -7,9 +7,14 @@
             "name": "Zura Gabievi",
             "email": "zura.gabievi@email.com",
             "homepage": "https://github.com/zgabievi"
+        },
+        {
+            "name": "Eryk Kleczewski",
+            "email": "ekkleczewski@gmail.com",
+            "homepage": "https://github.com/kleczewsky"
         }
     ],
-    "homepage": "https://github.com/zgabievi/laravel-promocodes",
+    "homepage": "https://github.com/Super-Pharm/laravel-promocodes2",
     "keywords": [
         "Laravel",
         "Promocodes"
