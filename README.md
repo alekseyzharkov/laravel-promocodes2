@@ -14,7 +14,7 @@ should take you several minutes to completely rewrite usage.
 You can install the package via composer:
 
 ```bash
-composer require zgabievi/laravel-promocodes
+composer require super-pharm/laravel-promocodes2
 ```
 
 ## Configuration
