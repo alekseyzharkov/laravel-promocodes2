@@ -20,7 +20,7 @@ class Promocode extends Model implements PromocodeContract
      * @var string[]
      */
     protected $fillable = [
-        'user_id', 'code', 'usages_left', 'bound_to_user', 'multi_use', 'details', 'expired_at',
+        'user_id', 'issued_for_id', 'code', 'usages_left', 'bound_to_user', 'multi_use', 'details', 'expired_at',
     ];
 
     /**
@@ -57,6 +57,17 @@ class Promocode extends Model implements PromocodeContract
         return $this->belongsTo(
             config('promocodes.models.users.model'),
             config('promocodes.models.users.foreign_id'),
+        );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function issuedFor(): BelongsTo
+    {
+        return $this->belongsTo(
+            config('promocodes.models.users.model'),
+            config('promocodes.models.users.issued_for_id'),
         );
     }
 

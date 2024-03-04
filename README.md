@@ -38,6 +38,7 @@ return [
             'model' => \App\Models\User::class,
             'table_name' => 'users',
             'foreign_id' => 'user_id',
+            'issued_for_id' => 'issued_for_id',
         ],
 
         'pivot' => [
@@ -84,18 +85,19 @@ It's very easy to use. Methods are combined, so that you can configure promocode
 
 ## Reference
 
-| Name          | Explanation                                                                                                             |
-|---------------|-------------------------------------------------------------------------------------------------------------------------|
-| Mask          | Astrisks will be replaced with random symbol                                                                            |
-| Characters    | Allowed symbols to use in mask replacement                                                                              |
-| Multi use     | Define if single code can be used multiple times, by the same user                                                      |
-| Unlimited     | Generated code will have unlimited usages                                                                               |
-| Bound to user | Define if promocode can be used only one user, if user is not assigned initially, first user will be bound to promocode |
-| User          | Define user who will be initially bound to promocode                                                                    |
-| Count         | Amount of unique promocodes should be generated                                                                         |
-| Usages        | Define how many times can promocode be used                                                                             |
-| Expiration    | DateTime when promocode should be expired. Null means that promocode will never expire                                  |
-| Details       | Array of details which will be retrieved upon apply                                                                     |
+| Name            | Explanation                                                                                                             |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------|
+| Mask            | Astrisks will be replaced with random symbol                                                                            |
+| Characters      | Allowed symbols to use in mask replacement                                                                              |
+| Multi use       | Define if single code can be used multiple times, by the same user                                                      |
+| Unlimited       | Generated code will have unlimited usages                                                                               |
+| Bound to user   | Define if promocode can be used only one user, if user is not assigned initially, first user will be bound to promocode |
+| Issued for user | Define the user that the promocode was issued for                                                                       |
+| User            | Define user who will be initially bound to promocode                                                                    |
+| Count           | Amount of unique promocodes should be generated                                                                         |
+| Usages          | Define how many times can promocode be used                                                                             |
+| Expiration      | DateTime when promocode should be expired. Null means that promocode will never expire                                  |
+| Details         | Array of details which will be retrieved upon apply                                                                     |
 
 ## Creating Promocodes
 
@@ -112,6 +114,7 @@ Promocodes::mask('AA-***-BB') // default: config('promocodes.code_mask')
           ->unlimited() // default: false
           ->boundToUser() // default: false
           ->user(User::find(1)) // default: null
+          ->issuedFor(User::find(2)) // default: null
           ->count(5) // default: 1
           ->usages(5) // default: 1
           ->expiration(now()->addYear()) // default: null

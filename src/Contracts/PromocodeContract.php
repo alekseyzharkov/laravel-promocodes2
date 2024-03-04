@@ -13,6 +13,9 @@ interface PromocodeContract
     public function user(): BelongsTo;
 
     //
+    public function issuedFor(): BelongsTo;
+
+    //
     public function users(): BelongsToMany;
 
     //

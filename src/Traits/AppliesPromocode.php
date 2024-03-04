@@ -37,6 +37,17 @@ trait AppliesPromocode
     }
 
     /**
+     * @return HasMany
+     */
+    public function issuedPromocodes(): HasMany
+    {
+        return $this->hasMany(
+            config('promocodes.models.promocodes.model'),
+            config('promocodes.models.users.issued_for_id'),
+        );
+    }
+
+    /**
      * @param string $code
      * @return PromocodeContract|null
      */

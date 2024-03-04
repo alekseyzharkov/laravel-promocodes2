@@ -12,6 +12,7 @@ return [
             'model' => \App\Models\User::class,
             'table_name' => 'users',
             'foreign_id' => 'user_id',
+            'issued_for_id' => 'issued_for_id',
         ],
 
         'pivot' => [

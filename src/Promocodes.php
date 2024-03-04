@@ -77,6 +77,11 @@ class Promocodes
     protected ?Model $user = null;
 
     /**
+     * @var Model|null
+     */
+    protected ?Model $issuedFor = null;
+
+    /**
      * @var PromocodeContract|null
      */
     protected ?PromocodeContract $promocode = null;
@@ -102,6 +107,16 @@ class Promocodes
     public function user(Model $user): static
     {
         $this->user = $user;
+        return $this;
+    }
+
+    /**
+     * @param Model $user
+     * @return $this
+     */
+    public function issuedFor(Model $user): static
+    {
+        $this->issuedFor = $user;
         return $this;
     }
 
@@ -296,6 +311,7 @@ class Promocodes
     {
         return $this->generate()->map(fn(string $code) => app(PromocodeContract::class)->create([
             'user_id' => optional($this->user)->id,
+            'issued_for_id' => optional($this->issuedFor)->id,
             'code' => $code,
             'usages_left' => $this->unlimited ? -1 : $this->usagesLeft,
             'bound_to_user' => $this->user || $this->boundToUser,
