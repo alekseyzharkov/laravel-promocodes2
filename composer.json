@@ -1,5 +1,5 @@
 {
-    "name": "super-pharm/laravel-promocodes2",
+    "name": "alekseyzharkov/laravel-promocodes2",
     "description": ":package_description",
     "license": "MIT",
     "authors": [
@@ -14,7 +14,7 @@
             "homepage": "https://github.com/kleczewsky"
         }
     ],
-    "homepage": "https://github.com/Super-Pharm/laravel-promocodes2",
+    "homepage": "https://github.com/alekseyzharkov/laravel-promocodes2",
     "keywords": [
         "Laravel",
         "Promocodes"
