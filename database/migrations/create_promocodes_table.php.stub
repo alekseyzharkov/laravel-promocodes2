@@ -18,7 +18,7 @@ class CreatePromocodesTable extends Migration
         Schema::create($models['promocodes']['table_name'], function (Blueprint $table) use ($models) {
             $table->id();
             $table->foreignId($models['users']['foreign_id'])->nullable()->constrained()->nullOnDelete();
-            $table->foreignId($models['users']['issued_for_id'])->references('id')->on($models['users']['table_name'])->nullable()->constrained()->nullOnDelete();
+            $table->unsignedBigInteger($models['users']['issued_for_id'])->nullable();
             $table->string('code', 20)->unique();
             $table->integer('usages_left')->default(1);
             $table->boolean('bound_to_user')->default(false);
@@ -26,6 +26,11 @@ class CreatePromocodesTable extends Migration
             $table->json('details')->nullable();
             $table->timestamp('expired_at')->nullable();
             $table->timestamps();
+
+            $table->foreign($models['users']['issued_for_id'])
+                ->references('id')
+                ->on($models['users']['table_name'])
+                ->nullOnDelete();
         });
     }
 

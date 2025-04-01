@@ -12,7 +12,12 @@
             "name": "Eryk Kleczewski",
             "email": "ekkleczewski@gmail.com",
             "homepage": "https://github.com/kleczewsky"
-        }
+        },
+      {
+        "name": "Alexey Zharkov",
+        "email": "pink.te@gmail.com",
+        "homepage": "https://github.com/alekseyzharkov"
+      }
     ],
     "homepage": "https://github.com/alekseyzharkov/laravel-promocodes2",
     "keywords": [
